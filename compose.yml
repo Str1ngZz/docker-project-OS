@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  backend:
+    image: tivanov11/docker_project:latest
+    ports:  
+      - "5000:5000"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: db_1
+      POSTGRES_USER: user_1
+      POSTGRES_PASSWORD: user_123
